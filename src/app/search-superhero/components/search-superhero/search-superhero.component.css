@@ -1,0 +1,32 @@
+.input_search {
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    
+    border: 1px solid #b7b7b7;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    font: normal normal bold;
+    color: rgba(255,255,255,1);    
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    letter-spacing: 4px;
+    background: #149DDD;
+    -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+    margin-right: 10px;
+  }
+  
+
+  @media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
+@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
+@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
+@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+#search_superhero{
+    padding: 10px 70px 10px 60px;
+
+}
+}
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }

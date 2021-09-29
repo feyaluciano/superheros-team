@@ -1,0 +1,81 @@
+<body>
+<main id="main">   
+  <app-lateral-menu> </app-lateral-menu>
+ 
+  <section id="facts" class="facts">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Super Heros</h2>       
+      </div>
+
+      <div class="row no-gutters">
+
+        <div *ngFor="let ps of listPowerstats" class="col-lg-2 col-md-6  d-md-flex align-items-md-stretch" data-aos="fade-up">
+          <div class="count-box">
+            <i class="bi {{ps.icon}}"></i>
+            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter">{{ps.amount}}</span>
+            <p><strong>{{ps.name}}</strong></p>
+          </div>
+        </div>                  
+      </div>
+
+      <div class="row no-gutters">
+        <div  class="col-lg-3 col-lg-offset-2 col-md-10 offset-lg-3 d-md-flex align-items-md-stretch" data-aos="fade-up">
+          <div class="count-box">
+            <i class="bi bi-arrow-bar-up"></i>
+            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter">{{totalHeight}}</span>
+            <p><strong>Heigth%</strong></p>
+          </div>
+        </div>  
+        
+        <div  class="col-lg-3 col-md-6  d-md-flex align-items-md-stretch" data-aos="fade-up">
+          <div class="count-box">
+            <i class="bi bi-hexagon"></i>
+            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter">{{totalWeight}}</span>
+            <p><strong>Weight%</strong></p>
+          </div>
+        </div>             
+
+      </div>
+
+
+      
+     
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <section id="portfolio" class="portfolio section-bg">
+    <div class="container">
+     
+     
+      <!-- DESARROLLAR ESTA FUNCIONALIDAD COMO EXTRA CON MALO BUENO <div class="row" data-aos="fade-up">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <ul id="portfolio-flters">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">App</li>
+            <li data-filter=".filter-card">Card</li>
+            <li data-filter=".filter-web">Web</li>
+          </ul>
+        </div>
+      </div> -->
+
+      <div class="row" data-aos="fade-up" data-aos-delay="100">      
+        <div *ngFor="let sheroe of listSuperHeros" class="col-lg-4 col-md-6 portfolio-item filter-app">                  
+          <app-super-hero-home [hero]="sheroe" [allowAdd]="true"></app-super-hero-home>
+      </div>                
+      </div>
+
+    </div>
+  </section>
+   
+</main>
+</body>

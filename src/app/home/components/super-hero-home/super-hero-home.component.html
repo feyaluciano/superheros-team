@@ -1,0 +1,41 @@
+
+  <div class="portfolio-wrap">
+    <img src="{{hero.image.url}}" class="img-fluid" alt="{{hero.name}}">
+    <div class="portfolio-links">
+
+      <div class="container-fluid text-center">
+        <div class="row powerstats" >
+          <div class="col-md-12"><span class="powerstats_text_name">{{hero.name}}</span> 
+          </div>
+          <div class="col-md-6"><span class="powerstats_text">intelligence:</span> {{hero.powerstats.intelligence}}
+          </div>
+          <div class="col-md-6"><span class="powerstats_text">strength:</span>  {{hero.powerstats.strength}}
+          </div>
+          <div class="col-md-6"><span class="powerstats_text">speed:</span> {{hero.powerstats.speed}}
+          </div>
+          <div class="col-md-6"><span class="powerstats_text">durability:</span> {{hero.powerstats.durability}}
+          </div>
+
+          <div class="col-md-6"><span class="powerstats_text">power:</span> {{hero.powerstats.power}}
+          </div>
+          <div class="col-md-6"><span class="powerstats_text">combat:</span> {{hero.powerstats.combat}}
+          </div>
+          
+          
+          <div class="col-md-6 col-sm-3" [hidden]="!allowAdd" >
+            <a (click)="delete(hero.id)"  class="portfolio-lightbox"  title="Delete"><i class="bi bi-trash"></i>
+              Delete
+            </a>                 
+          </div>
+          <div class="col-md-6 col-sm-3" [hidden]="!allowAdd">
+            <a href="#/detail/superhero/{{hero.id}}" title="More Details"><i class="bx bx-link"></i>Detail</a>
+          </div>      
+          
+          <div class="col-md-12 col-sm-3" [hidden]="allowAdd">
+            <a (click)="add(hero)" title="Add"><i class="bi bi-plus"></i>Add</a>
+          </div>      
+        
+        </div>
+      </div>
+    </div>             
+  </div>

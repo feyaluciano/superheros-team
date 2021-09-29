@@ -1,0 +1,90 @@
+<main id="main">
+<section id="contact" class="contact">
+<div class="container">
+  <div class="section-title">
+    <h2>Ingreso al sistema de Super Heroes</h2>     
+  </div>
+
+  <div class="row" data-aos="fade-in">
+
+    <div class="col-lg-5 d-flex align-items-stretch">
+      <div class="info">
+        <img src="https://www.superherodb.com/pictures2/portraits/10/100/8.jpg" class="img-fluid" alt="">                            
+      </div>
+    </div>
+
+    <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+      <form  
+              class="php-email-form"
+              [formGroup]="loginFormulario"             
+            >     
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="name">Email</label>
+            <input type="text" formControlName="email" name="email" class="form-control" id="email" >
+            <div class="input-group mb-3">
+            <div
+                    style="color: #ff084e"
+                    *ngIf="
+                      loginFormulario.get('email').touched &&
+                      loginFormulario.hasError('required', 'email')
+                    "
+                  >
+                    Ingrese un email
+                  </div>
+                  <div
+                  class="error_message"
+                    *ngIf="
+                      loginFormulario.get('email').hasError('email') &&
+                      loginFormulario.get('email').touched
+                    "
+                  >
+                    Ingrese un email
+                  </div>
+                </div>  
+          </div>
+          <div class="form-group col-md-6">
+            <label for="name">Password</label>
+            <input type="password" formControlName="password" name="password" class="form-control" id="password"  >
+            <div class="input-group mb-3">
+              <div
+                class="error_message"
+                *ngIf="
+                  loginFormulario.get('password').hasError('required') &&
+                  loginFormulario.get('password').touched
+                "
+              >
+                Ingrese un password
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row" *ngIf="userAndPassError">
+          <div class="form-group col-md-12 error_message">
+            <label for="name" cla>Please provide valid email and password</label>
+          </div>
+        </div>
+       
+        <div class="my-3 text-center">
+          <div *ngIf="sending">
+            <img width="30%" src="https://static.wixstatic.com/media/bf827f_9b5fb5df538f4153908e56d16e151e5b~mv2.gif" class="img-fluid" alt="">
+          </div>
+          <div class="error-message"></div>
+          <div class="sent-message">Your message has been sent. Thank you!</div>
+        </div>
+      <div class="text-center"><button [disabled]="sending"  class="btn btn-primary" type="button" (click)="login()">Ingresar</button></div>
+      </form>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+ 
+
+  
+
+</main><!-- End #main -->
