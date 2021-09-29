@@ -35,8 +35,9 @@ export class LoginComponent implements OnInit {
             this.userAndPassError=false;
             //Para obtener la key de facebook para poder usar la api se debe ingresar a
             //https://superheroapi.com/ y colocarla en el siguiente objeto, en el caso que
-            // no se pueda loguear quitar esta validacion.
-            let user:User={Token:res.data.token,Token_Facebook:"10226559024744508"};
+            // no se pueda loguear por alguna razón quitar esta validacion.
+            //Si ocurren probelas de Cors con utilizar la extensión para Chrome CORS Unblock 0.1.9
+            let user:User={Token:res.data.token,Token_Facebook:"XXXXXXXXXX"};
             this.userStatusService.setUser(user); 
             
             //Al iniciar la aplicación obtengo 6 superheroes y los alamceno en una array en el sesion storage
