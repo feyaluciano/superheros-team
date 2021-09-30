@@ -12,7 +12,7 @@ export class SuperHerosService {
   constructor(private userStatusService: UserStatusService) {
     this.userLogged = userStatusService.getUser();
   }
-
+  
   getSuperHero(id: string) {
     var axios = require('axios');
 
@@ -23,7 +23,9 @@ export class SuperHerosService {
         this.userLogged.Token_Facebook +
         '/' +
         id,
-      headers: {},
+        headers: {   
+          
+        },
     };
     return axios(config);      
   }

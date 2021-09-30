@@ -11,8 +11,6 @@ export class SearchSuperheroService {
 constructor(private userStatusService: UserStatusService) {
   this.userLogged = userStatusService.getUser();
  }
-
-
  getSuperHeros(name: string) {
   var axios = require('axios');
 
@@ -23,7 +21,8 @@ constructor(private userStatusService: UserStatusService) {
       this.userLogged.Token_Facebook +
       '/search/' +
       name,
-    headers: {},
+      headers: {                 
+      },
   };
   return axios(config);      
 }

@@ -52,6 +52,7 @@ export class SuperHerosComponent implements OnInit {
 
 
   totalPowerstats(){ 
+    //alert(this.listPowerstats.length)
     //Genero un array de poderes con su total, y lo ordeno por mayor   
     this.listPowerstats=[];
     let totalIntelligence=0;;
@@ -70,7 +71,9 @@ export class SuperHerosComponent implements OnInit {
       totalPower=totalPower + parseFloat(unsph.powerstats.power.toString());
       totalCombat=totalCombat + parseFloat(unsph.powerstats.combat.toString());
       
-      this.calculateHeigh(unsph.appearance.height);      
+      //Calculo la altura por cm, por lo tanto tengo que quitar las pulgadas
+      this.calculateHeigh(unsph.appearance.height); 
+      //Calculo el peso por Kl, por lo tanto tengo que quitar las libras     
       this.calculateWeight(unsph.appearance.weight);      
     });
 
@@ -108,8 +111,9 @@ export class SuperHerosComponent implements OnInit {
     await this.totalPowerstats();
   }
 
-  async ngOnInit() {
-    //Me subscribo a los cambios que haya en el array de superheroes
+  async ngOnInit() {   
+    //Me subscribo a los cambios que haya en el array de superheroes, al recibir cambio actualizo el listado de superheroes
+    // y los campos del panel superior.
     this.superHeroStorageService.getHandlerSuperHero$().subscribe(res=>{      
       this.laodSuperHeros();
     })    

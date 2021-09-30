@@ -54,26 +54,12 @@
 
 
   <section id="portfolio" class="portfolio section-bg">
-    <div class="container">
-     
-     
-      <!-- DESARROLLAR ESTA FUNCIONALIDAD COMO EXTRA CON MALO BUENO <div class="row" data-aos="fade-up">
-        <div class="col-lg-12 d-flex justify-content-center">
-          <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-card">Card</li>
-            <li data-filter=".filter-web">Web</li>
-          </ul>
-        </div>
-      </div> -->
-
+    <div class="container">      
       <div class="row" data-aos="fade-up" data-aos-delay="100">      
         <div *ngFor="let sheroe of listSuperHeros" class="col-lg-4 col-md-6 portfolio-item filter-app">                  
           <app-super-hero-home [hero]="sheroe" [allowAdd]="true"></app-super-hero-home>
       </div>                
       </div>
-
     </div>
   </section>
    

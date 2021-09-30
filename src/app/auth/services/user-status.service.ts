@@ -23,11 +23,11 @@ export class UserStatusService {
       }     
       return this.user;    
     }  
-    setUser(user:User){    
+    async setUser(user:User){    
       var token="";
       try   
-        {  
-          localStorage.setItem('userLoggedIn',JSON.stringify(user));                 
+        {           
+           localStorage.setItem('userLoggedIn',JSON.stringify(user));                 
           }        
         catch (Error)   
         {  
