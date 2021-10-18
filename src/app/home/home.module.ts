@@ -14,7 +14,7 @@ import { SharedModule } from '../shared/shared.module';
     HomeRoutingModule,
     SharedModule,
   ],
-  exports:[SuperHeroHomeComponent]
+  exports:[SuperHeroHomeComponent,SuperHerosComponent]
 })
 export class HomeModule { }
 

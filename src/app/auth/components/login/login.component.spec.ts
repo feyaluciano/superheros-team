@@ -11,6 +11,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AuthModule } from '../../auth.module';
 import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { LateralMenuComponent } from 'src/app/shared/components/lateral-menu/lateral-menu.component';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -19,7 +21,8 @@ describe('LoginComponent', () => {
 
   beforeEach((async () => {
     await TestBed.configureTestingModule({
-      imports: [ 
+      imports: [
+        
         AuthModule,
         
         HttpClientTestingModule,  
@@ -37,6 +40,8 @@ describe('LoginComponent', () => {
 
  
 
+
+
   }));
 
   beforeEach(() => {
@@ -44,7 +49,7 @@ describe('LoginComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
 
-   
+   //component.ngOnInit();
 
   });
 
@@ -66,6 +71,7 @@ describe('LoginComponent', () => {
       password:['react',[Validators.required]],
       email:['challenge@alkemy.org',[Validators.required,Validators.email]]
     });
+   // await fixture.nativeElement.querySelector('#loggin_button').click();    
     expect(component.loginFormulario.invalid).toBeFalse();
   });
 

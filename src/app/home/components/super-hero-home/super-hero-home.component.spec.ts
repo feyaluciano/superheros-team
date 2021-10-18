@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { DebugElement, NgModule } from '@angular/core';
 
 import { SuperHeroHomeComponent } from './super-hero-home.component';
 import { Imagen } from 'src/app/core/interfaces/Image';
@@ -11,6 +11,9 @@ import { Appearance } from 'src/app/core/interfaces/Appearance';
 import { Work } from 'src/app/core/interfaces/Work';
 import { Connections } from 'src/app/core/interfaces/Connections';
 import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { AppModule } from 'src/app/app.module';
+import { HomeModule } from '../../home.module';
 
 describe('SuperHeroHomeComponent', () => {
   let component: SuperHeroHomeComponent;
@@ -18,7 +21,7 @@ describe('SuperHeroHomeComponent', () => {
 
   beforeEach((() => {
     TestBed.configureTestingModule({
-      imports: [NgbModule],
+      imports: [SharedModule,NgbModule,HomeModule],
       declarations: [ SuperHeroHomeComponent ],
       providers:[NgbActiveModal]
     })
@@ -38,6 +41,8 @@ describe('SuperHeroHomeComponent', () => {
     const work: Work={occupation:"the_ocupation"};
     const connections: Connections={group_affiliation:""};
     component.hero={id:"1",response:"",name:"unsuperhero",powerstats:powerstats,biography:biography,appearance,work:work,connections:connections,image:imagen}    
+    component.allowAdd=true;
+
 
     fixture.detectChanges();
   });
