@@ -4,14 +4,18 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ModalAlertComponent } from './modal-alert.component';
+import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
 
 describe('ModalAlertComponent', () => {
   let component: ModalAlertComponent;
   let fixture: ComponentFixture<ModalAlertComponent>;
 
-  beforeEach(async(() => {
+  beforeEach((() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalAlertComponent ]
+      imports:[],
+      declarations: [ ModalAlertComponent ],
+      providers:[NgbActiveModal]
     })
     .compileComponents();
   }));

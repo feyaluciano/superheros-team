@@ -111,6 +111,12 @@ export class SuperHerosComponent implements OnInit {
     await this.totalPowerstats();
   }
 
+
+
+
+
+
+  
   async ngOnInit() {   
     //Me subscribo a los cambios que haya en el array de superheroes, al recibir cambio actualizo el listado de superheroes
     // y los campos del panel superior.

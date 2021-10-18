@@ -18,10 +18,10 @@ export class LoginComponent implements OnInit {
   public sending:boolean=false;
   public initializing:boolean=false;
   private notlogin:boolean=false;
-
+  //PASSWORD:react EMAIL:challenge@alkemy.org
   loginFormulario:FormGroup=this._builder.group({
-    password:['react',[Validators.required]],
-    email:['challenge@alkemy.org',[Validators.required,Validators.email]]
+    password:['',[Validators.required]],
+    email:['',[Validators.required,Validators.email]]
   });
   
 

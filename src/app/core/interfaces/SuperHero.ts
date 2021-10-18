@@ -14,5 +14,5 @@ export interface SuperHero {
     appearance: Appearance;
     work: Work;
     connections: Connections;
-    image: Imagen;   
+    image?: Imagen;   
 }

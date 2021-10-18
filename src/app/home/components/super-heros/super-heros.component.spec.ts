@@ -4,14 +4,17 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { SuperHerosComponent } from './super-heros.component';
+import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 describe('SuperHerosComponent', () => {
   let component: SuperHerosComponent;
   let fixture: ComponentFixture<SuperHerosComponent>;
 
-  beforeEach(async(() => {
+  beforeEach((() => {
     TestBed.configureTestingModule({
-      declarations: [ SuperHerosComponent ]
+      imports: [NgbModule],
+      declarations: [ SuperHerosComponent ],
+      providers:[NgbActiveModal]
     })
     .compileComponents();
   }));
