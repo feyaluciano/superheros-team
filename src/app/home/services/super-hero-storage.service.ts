@@ -26,8 +26,9 @@ addSuperHero(superHero: SuperHero){
 }
 
 
+
 getlength(){
-  return this.listSuperHeros.length      
+  return this.listSuperHeros.length;      
 }
 
 removeSuperHero(id: string){  

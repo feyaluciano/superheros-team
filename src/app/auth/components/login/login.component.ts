@@ -6,6 +6,8 @@ import { SuperHeroStorageService } from 'src/app/home/services/super-hero-storag
 import { SuperHerosService } from 'src/app/home/services/super-heros.service';
 import { AuthService } from '../../services/auth.service';
 import { UserStatusService } from '../../services/user-status.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
@@ -20,8 +22,8 @@ export class LoginComponent implements OnInit {
   private notlogin:boolean=false;
   //PASSWORD:react EMAIL:challenge@alkemy.org
   loginFormulario:FormGroup=this._builder.group({
-    password:['',[Validators.required]],
-    email:['',[Validators.required,Validators.email]]
+    password:['react',[Validators.required]],
+    email:['challenge@alkemy.org',[Validators.required,Validators.email]]
   });
   
 
